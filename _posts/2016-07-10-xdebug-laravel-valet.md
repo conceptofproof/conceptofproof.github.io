@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Valet and XDebug with PHPStorm
-subtitle: debugging your web apps with lightning fast Valet
+subtitle: Debug your web apps while using lightning fast Valet
 ---
 
 This is how I setup xdebug with [Valet](https://laravel.com/docs/master/valet) on MacOSX 10.11.5:

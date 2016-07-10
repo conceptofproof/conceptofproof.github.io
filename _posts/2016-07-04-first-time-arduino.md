@@ -52,8 +52,8 @@ Really the best place to begin is the [Arduino HomePage ](https://www.arduino.cc
 * Serial.begin(PortNum);  
 * Serial.print("test");
 
-Each arduino sketch files contains a _setup()_ and _loop()_ function.
+Each arduino sketch files contains a [_setup()_](https://www.arduino.cc/en/Reference/setup) and [_loop()_](https://www.arduino.cc/en/Reference/Loop) function.
 
 ### Arduino Projects
 
-[See all my current projects](https://blog.murraywynnes.com/arduino-projects/)
+[See all current projects](https://blog.murraywynnes.com/arduino-projects/)

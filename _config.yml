@@ -23,7 +23,7 @@ description: Things I find interesting
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "about"
+  About: "aboutme"
   Resources:
     - Fermats Library: "http://fermatslibrary.com/"
     - Programming Books: "https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md"

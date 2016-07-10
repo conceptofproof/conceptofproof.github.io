@@ -40,15 +40,14 @@ avatar: "http://pbs.twimg.com/profile_images/727277103801053186/SfFVa6Z9_400x400
 author:
   name: Murray Wynnes
   email: "mrwynnes@gmail.com"
-  facebook: murraywynnes
   github: codemuz
   twitter: murraywynnes
   linkedin: "in/murraywynnes"
  
 # Select which links to show in the footer
 footer-links-active:
-  rss: false
-  facebook: true
+  rss: true
+  facebook: false
   email: true
   twitter: true
   github: true

@@ -39,7 +39,7 @@ The electrons in the circuit flow from ground to high voltage as they are negati
 
 ### Arduino Basics
 
-Really the best place to begin is the [Arduino HomePage ](https://www.arduino.cc/en/Guide/HomePage). Once you have the IDE and libraries installed for your platform the [https://www.arduino.cc/en/Reference/HomePage](language reference) for _ino_ files is very usefull. The first thing to note is the types of pins on your Arduino board; there's [digital pins](https://www.arduino.cc/en/Tutorial/DigitalPins) and [analogue pins](https://www.arduino.cc/en/Tutorial/AnalogInputPins).
+Really the best place to begin is the [Arduino HomePage ](https://www.arduino.cc/en/Guide/HomePage). Once you have the IDE and libraries installed for your platform the [language reference](https://www.arduino.cc/en/Reference/HomePage) for _ino_ files is very usefull. The first thing to note is the types of pins on your Arduino board; there's [digital pins](https://www.arduino.cc/en/Tutorial/DigitalPins) and [analogue pins](https://www.arduino.cc/en/Tutorial/AnalogInputPins).
 
 #### digital pin functions
 * pinMode(pinNum, INPUT/OUTPUT);  

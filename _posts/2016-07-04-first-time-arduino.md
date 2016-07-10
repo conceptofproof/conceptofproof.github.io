@@ -19,21 +19,19 @@ Ohm's law states _V = I * R_
 
 * Voltage is **different** accross components
 * Current is the **same** accross components
-
-_Vtotal = V1 + V2 + V3_  
-_Current total = I1 = I2 = I3_  
-_Rtotal = R1 + R2 + R3_
+* _Vtotal = V1 + V2 + V3_  
+* _Current total = I1 = I2 = I3_  
+* _Rtotal = R1 + R2 + R3_
 
 ### Circuits in  Parallel
 
 * Voltage is the **same** accross branches
 * Current is the **different** accross branches
+* _Vtotal = V1 + V2 + V3_  
+* _Current total = I1 = I2 = I3_  
+* _1/Rtotal = 1/R1 + 1/R2 + 1/R3_
 
-_Vtotal = V1 + V2 + V3_  
-_Current total = I1 = I2 = I3_  
-_1/Rtotal = 1/R1 + 1/R2 + 1/R3_
-
-The voltage from the battery provides charge, imagine the charge of the circuit channeling itself like a liquid via different routes depending on how much resistence it faces. If components are connected along a single wire (series) then the level of charge is constant as there is only one path. If there are multiple routes then the charge favours route with less obstacles (resistence), but of course some will still flow through other routes to ground.
+The potential difference at +V on a closed circuit provides charge, imagine the charge of the circuit channeling itself like a liquid via different routes depending on how much resistence it faces. If components are connected along a single wire (series) then the level of charge is constant as there is only one path. If there are multiple routes then the charge favours route with less obstacles (resistence), but of course some will still flow through other routes to ground.
 
 The electrons in the circuit flow from ground to high voltage as they are negatively charged.
 

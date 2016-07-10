@@ -1,7 +1,7 @@
 ---
 layout: post
-title: A first look at Arduino
-subtitle: Debug your web apps while using lightning fast Valet
+title: Initiating Arduino
+subtitle: Introduction to basic level Arduino programming
 published: true
 ---
 

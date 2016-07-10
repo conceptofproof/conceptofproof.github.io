@@ -6,7 +6,7 @@ subtitle: debugging your web apps with lightning fast Valet
 
 This is how I setup xdebug with [Valet](https://laravel.com/docs/master/valet) on MacOSX 10.11.5:
 
-First use phpinfo() to verify your php version (Mine is: 7.0.6).
+Begin by using phpinfo() to verify your php version (Mine is: 7.0.6).
 
 Then install the correct xdebug for your php version. Using homebrew you can search for the correct xdebug using the command:
 

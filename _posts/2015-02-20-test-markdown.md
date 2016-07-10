@@ -4,38 +4,54 @@ title: Test markdown
 subtitle: Each post also has a subtitle
 ---
 
-You can write regular [markdown](http://markdowntutorial.com/) here and Jekyll will automatically convert it to a nice webpage.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](http://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+ This is how I setup xdebug with valet on MacOSX 10.11.5:
 
-**Here is some bold text**
+First use phpinfo() to verify your php version (Mine is: 7.0.6).
 
-## Here is a secondary heading
-
-Here's a useless table:
- 
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
- 
-
-How about a yummy crepe?
-
-![Crepe](http://lafenicegelato.com/wp-content/uploads/2014/09/crepes-with-chocolate.jpg)
-
-Here's a code chunk:
+Then install the correct xdebug for your php version. Using homebrew you can search for the correct xdebug using the command:
 
 ~~~
-x <- 5 + 10
-print(x)
+$ brew search xdebug
+~~~
+This returns the most suitable:'homebrew/php/php70-xdebug
+
+Install xdebug using homebrew:
+
+~~~
+$ brew install php70-xdebug
+~~~
+Then find your PHP path using the following:
+
+~~~
+$ php --ini
+Configuration File (php.ini) Path: /usr/local/etc/php/7.0
+Loaded Configuration File: /usr/local/etc/php/7.0/php.ini
+Scan for additional .ini files in: /usr/local/etc/php/7.0/conf.d
+Additional .ini files parsed: /usr/local/etc/php/7.0/conf.d/ext-xdebug.ini
+~~~
+Select this php version in your IDE (Under PHPStorm in interpreter section) by simply adding your PHP path into 'PHP executable':
+
+~~~
+/usr/local/Cellar/php70/7.0.6/bin/php
+~~~
+Also "php --ini" should tell you which php.ini file you're using. (mine is /usr/local/etc/php/7.0/php.ini see above).
+
+To enable xdebug open this php.ini file and add the following lines:
+
+~~~
+zend_extension=/usr/local/Cellar/php70-xdebug/2.4.0/xdebug.so
+xdebug.remote_enable=1
+xdebug.remote_host=localhost
+xdebug.remote_port=9001
+xdebug.remote_autostart=1
+xdebug.idekey=PHPSTORM
 ~~~
 
-And here is some code with syntax highlighting
+Update the zend_extension parameter to wherever your xdebug.so is located. (Note an additional .ini file may also be loading xdebug, mine was /usr/local/etc/php/7.0/conf.d/ext-xdebug.ini)
 
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
+Finally, note that the port is 9001 (not the default 9000), this is because valet and/or vagrant may be using port 9000. You will need to inform your IDE you have changed the port, you can do this in PHPStorm under 'Preferences -> PHP -> Debug' then change Xdebug Port number to 9001. Also don't forget to restart valet:
+
+~~~
+$ valet restart
+~~~
+

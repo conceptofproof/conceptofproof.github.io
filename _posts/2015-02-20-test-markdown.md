@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Test markdown
-subtitle: Each post also has a subtitle
+title: Valet and XDebug with PHPStorm
+subtitle: debugging your web apps with lightning fast Valet
 ---
 
- This is how I setup xdebug with valet on MacOSX 10.11.5:
+This is how I setup xdebug with [Valet](https://laravel.com/docs/master/valet) on MacOSX 10.11.5:
 
 First use phpinfo() to verify your php version (Mine is: 7.0.6).
 
@@ -29,7 +29,7 @@ Loaded Configuration File: /usr/local/etc/php/7.0/php.ini
 Scan for additional .ini files in: /usr/local/etc/php/7.0/conf.d
 Additional .ini files parsed: /usr/local/etc/php/7.0/conf.d/ext-xdebug.ini
 ~~~
-Select this php version in your IDE (Under PHPStorm in interpreter section) by simply adding your PHP path into 'PHP executable':
+Select this php version in your IDE (Under [PHPStorm](https://www.jetbrains.com/phpstorm/) in interpreter section) by simply adding your PHP path into 'PHP executable':
 
 ~~~
 /usr/local/Cellar/php70/7.0.6/bin/php

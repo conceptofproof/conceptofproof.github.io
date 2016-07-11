@@ -31,7 +31,7 @@ Ohm's law states _V = I * R_
 * _Current total = I1 + I2 + I3_  
 * _1/Rtotal = 1/R1 + 1/R2 + 1/R3_
 
-The potential difference at +V on a closed circuit provides charge which then channels itself like via routes depending on how much resistance it faces. If components are connected along a single wire (series) then the level of charge is constant as there is only one path. If there are multiple routes then the charge favours route with less obstacles (resistance), some of the charge still flows through other routes to ground.
+The potential difference at +V on a closed circuit provides charge which then channels itself via routes depending on how much resistance it faces. If components are connected along a single wire (series) then the level of charge is constant as there is only one path. If there are multiple routes then the charge favours route with less obstacles (resistance), some of the charge still flows through other routes to ground.
 
 The electrons in the circuit flow from ground to high voltage as they are negatively charged.
 

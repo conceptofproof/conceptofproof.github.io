@@ -44,7 +44,7 @@ Really the best place to begin is the [Arduino HomePage ](https://www.arduino.cc
 pinMode(pinNum, INPUT/OUTPUT);  
 digitalRead(pinNum);  
 digitalWrite(pinNum, LOW/HIGH);  
-analogWrite(pinNum, Value); (to digital [Pulse Width Modulation](https://www.arduino.cc/en/Tutorial/PWM) pin)
+analogWrite(pinNum, Value); (to digital pulse width modulation pins)
 ~~~
 
 #### Analog pin function

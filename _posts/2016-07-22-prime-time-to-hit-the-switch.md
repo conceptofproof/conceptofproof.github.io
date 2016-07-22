@@ -35,9 +35,13 @@ For you to play around with I've prototyped the board using circuits.io [here](h
 
 The source code is available to [download](https://github.com/CodeMuz/arduino-projects/blob/master/Extra/Prime_Number_Game/primegame.ino) from github under CC BY SA 3.0.
 
+## Schematics:
+
 ![circuit diagram](https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/circuit-diagram.png)
 
 ![copper-diagram](https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/copper-diagram.png)
+
+## Implementation:
 
 An interesting things to note in the source code is the random number generator code:
 
@@ -60,7 +64,7 @@ unsigned long generateNewNumber() {
 }
 ~~~
 
-Firstly I'm using the usigned long data type as that holds 4 bytes of positive numbers (0 to 4,294,967,295), this is because prime numbers are by definition positive numbers and a long allows the game to generate larger numbers if required. For speed with primality test and to reduce difficulty I've set the max to the 5th Mersenne Prime 8191.
+Firstly I'm using the usigned long data type as that holds 4 bytes of positive numbers (0 to 4,294,967,295), this is because prime numbers are by definition positive numbers. For speed with primality test and to reduce difficulty I've set the max to the 5th Mersenne Prime 8191.
 
 The analogue input device is required to provide more random information to the arduino _random_ function when generating the prime numbers. There's also a check so that the same number does not appear twice as this would be sub optimal for a quiz type game.
 
@@ -86,6 +90,14 @@ boolean isPrime(long n) {
 }
 ~~~
 
-A better approach would be using the deterministic [Baillie–PSW](https://en.wikipedia.org/wiki/Baillie%E2%80%93PSW_primality_test).
+## Testing:
 
 Running the circuit on 10,000 numbers for 6,421ms generates 3796 primes indicating that if you were to select 'No' every answer you would have a 62.04% rate of success.
+
+A better approach would be using the deterministic [Baillie–PSW](https://en.wikipedia.org/wiki/Baillie%E2%80%93PSW_primality_test).
+
+Potential extensions to this project, other than faster implementation, include: 
+
+- Varying the input type for responding to the quiz (movement sensors or variable resistors, or connecting to the device over bluetooth or wifi)
+- Modifying the response interface, i.e with LEDs or Piezos
+- An alternative number game, for example instead of isPrime() you could ask isPerfectNumber() or use any equation with multiples, powers and divisors.

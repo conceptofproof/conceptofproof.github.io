@@ -18,7 +18,7 @@ The screen also displays your score so you can challenge yourself or your friend
 ## How to build this yourself
 
 To build this circuit, with or without a breadboard, the components you'll need are:
-- Arduino UNO
+- Arduino UNO (used revision 3)
 - Potentiometer
 - Two Switches for input controls, any type you feel like is ok I used push-to-make buttons
 - Any analog input (Capacitor, potentiometer, temp sensors or photo-resistors are all great)
@@ -27,17 +27,15 @@ To build this circuit, with or without a breadboard, the components you'll need 
 
 The circuit looks as follows:
 
-
-![circuit diagram]({{site.baseurl}}/https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/circuit-diagram.png)
-
-![copper-diagram]({{site.baseurl}}/https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/copper-diagram.png)
-
-![component view]({{site.baseurl}}/https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/component_vie.png)
-
+![component view](https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/component_vie.png)
 
 For you to play around with I've prototyped the board using circuits.io [here](https://circuits.io/circuits/2458049-prime-number-guesser)
 
 The source code is available to [download](https://github.com/CodeMuz/arduino-projects/blob/master/Extra/Prime_Number_Game/primegame.ino) from github under CC BY SA 3.0.
+
+![circuit diagram](https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/circuit-diagram.png)
+
+![copper-diagram](https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/copper-diagram.png)
 
 An interesting things to note in the source code is the random number generator code:
 

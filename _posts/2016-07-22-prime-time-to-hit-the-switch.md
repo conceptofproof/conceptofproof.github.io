@@ -18,6 +18,7 @@ The screen also displays your score so you can challenge yourself or your friend
 ## How to build this yourself
 
 To build this circuit, with or without a breadboard, the components you'll need are:
+
 1. Arduino UNO (used revision 3)
 2. Potentiometer
 3. Two Switches for input controls, any type you feel like is ok I used push-to-make buttons

@@ -3,17 +3,19 @@ layout: post
 published: true
 title: Prime time to hit the switch
 ---
-If you have a few hours to spare and an Arduino Uno lying around, here's a fun game I made that challenges your ability to factorize numbers and I'll show you how to make one too.
+Do you have a talent for factorizing arbitrary large random numbers? Here is a prime number guessing game I made, which takes about 2 hours to build yourself, which challenges you with random numbers to put your arithmetic skills to the test.
 
-The aim of the game is to correctly guess whether a number is prime or not. 
+The aim of the game is simple: correctly identify whether a number is prime or not. 
 
-A prime number is a whole number greater than 1, whose only two whole-number factors are 1 and itself.
+_A prime number is a whole number greater than 1, whose only two whole-number factors are 1 and itself._
 
-VIDEO HERE
+[![Arduino prime number game](http://img.youtube.com/vi/bANKbJNpxhU/0.jpg)](http://www.youtube.com/watch?v=bANKbJNpxhU "Video Title")
 
 To begin a number is displayed on the screen and you are presented with the option to select 'yes' or 'no'. The question is simply: 'Is this number a Prime number or not?'.
 
 The screen also displays your score so you can challenge yourself or your friends and family.
+
+My implementation uses an Arduino UNO Revision 3, If you're interested in playing or building one for yourself I'll show you how below.
 
 ## Instructions
 

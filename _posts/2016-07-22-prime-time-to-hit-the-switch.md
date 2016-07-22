@@ -3,12 +3,6 @@ layout: post
 published: true
 title: Prime time to hit the switch
 ---
----
-layout: post
-published: false
-title: Prime time to hit the switch
----
-
 If you have a few hours to spare and an Arduino Uno lying around, here's a fun game I made that challenges your ability to factorize numbers and I'll show you how to make one too.
 
 The aim of the game is to correctly guess whether a number is prime or not. 

@@ -15,7 +15,7 @@ To begin a number is displayed on the screen and you are presented with the opti
 
 The screen also displays your score so you can challenge yourself or your friends and family.
 
-## How to build this yourself
+## Instructions
 
 To build this circuit, with or without a breadboard, the components you'll need are:
 

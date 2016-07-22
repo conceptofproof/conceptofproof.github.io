@@ -18,13 +18,13 @@ The screen also displays your score so you can challenge yourself or your friend
 ## How to build this yourself
 
 To build this circuit, with or without a breadboard, the components you'll need are:
-- Arduino UNO (used revision 3)
-- Potentiometer
-- Two Switches for input controls, any type you feel like is ok I used push-to-make buttons
-- Any analog input (Capacitor, potentiometer, temp sensors or photo-resistors are all great)
-- Any LCD display (at least 16 x 2) I used [LCM1602C]
-- You can power it from 9v battery or USB cable.
-- 10k ohm step down resitors
+1. Arduino UNO (used revision 3)
+2. Potentiometer
+3. Two Switches for input controls, any type you feel like is ok I used push-to-make buttons
+4. Any analog input (Capacitor, potentiometer, temp sensors or photo-resistors are all great)
+5. An LCD display (at least 16 x 2) I used [LCM1602C]
+6. You can power it from 9v battery or USB cable.
+7. 10k ohm step down resitors
 
 The circuit looks as follows:
 

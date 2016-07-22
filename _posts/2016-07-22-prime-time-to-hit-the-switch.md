@@ -24,12 +24,13 @@ To build this circuit, with or without a breadboard, the components you'll need 
 - Any analog input (Capacitor, potentiometer, temp sensors or photo-resistors are all great)
 - Any LCD display (at least 16 x 2) I used [LCM1602C]
 - You can power it from 9v battery or USB cable.
+- 10k ohm step down resitors
 
 The circuit looks as follows:
 
 ![component view](https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/component_vie.png)
 
-For you to play around with I've prototyped the board using circuits.io [here](https://circuits.io/circuits/2458049-prime-number-guesser)
+For you to play around with I've prototyped the board using circuits.io [here](https://circuits.io/circuits/2458049-prime-number-guesser).
 
 The source code is available to [download](https://github.com/CodeMuz/arduino-projects/blob/master/Extra/Prime_Number_Game/primegame.ino) from github under CC BY SA 3.0.
 

@@ -33,7 +33,7 @@ The circuit looks as follows:
 
 ![component view](https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/component_vie.png)
 
-For you to play around with I've prototyped the board using circuits.io [here](https://circuits.io/circuits/2458049-prime-number-guesser).
+I've prototyped the board using circuits.io [here](https://circuits.io/circuits/2458049-prime-number-guesser) for you to play around with. You'll notice the jump wires have different colours to the my circuit as it's clearer to follow the colours btu unfortunately I don't yet have wires with these colours. 
 
 The source code is available to [download](https://github.com/CodeMuz/arduino-projects/blob/master/Extra/Prime_Number_Game/primegame.ino) from github under CC BY SA 3.0.
 

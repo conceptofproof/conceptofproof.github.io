@@ -35,13 +35,13 @@ For you to play around with I've prototyped the board using circuits.io [here](h
 
 The source code is available to [download](https://github.com/CodeMuz/arduino-projects/blob/master/Extra/Prime_Number_Game/primegame.ino) from github under CC BY SA 3.0.
 
-## Schematics:
+## Schematics
 
 ![circuit diagram](https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/circuit-diagram.png)
 
 ![copper-diagram](https://raw.githubusercontent.com/CodeMuz/arduino-projects/master/Extra/Prime_Number_Game/copper-diagram.png)
 
-## Implementation:
+## Implementation
 
 An interesting things to note in the source code is the random number generator code:
 

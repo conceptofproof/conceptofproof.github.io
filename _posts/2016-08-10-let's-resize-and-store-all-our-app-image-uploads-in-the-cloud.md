@@ -31,16 +31,16 @@ $ php artisan make:controller UploadController
 
 We can then access the file upload in the store method of the UploadController by accessing the $request dependency which can be injected into the function and automatically resolved by Laravel.
 
-To perform the resize and saving to disk we need the (Image intervention)[http://image.intervention.io/] PHP package which can be installed via composer:
+To perform the resize and saving to disk we need the [Image intervention](http://image.intervention.io/) PHP package which can be installed via composer:
 
 ~~~
-	"require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",
-        "intervention/image": "2.3.7",
-        "ext-gd": "*",
-        "league/flysystem-aws-s3-v3": "~1.0"
-    }
+"require": {
+	"php": ">=5.5.9",
+	"laravel/framework": "5.2.*",
+	"intervention/image": "2.3.7",
+	"ext-gd": "*",
+	"league/flysystem-aws-s3-v3": "~1.0"
+}
 ~~~
 
 
@@ -50,19 +50,19 @@ Now we can make the store function to upload the image in the UploadController.
 
 ~~~
 
-	public function store(Request $request) {
+public function store(Request $request) {
 
-        $image = $request->file('image');
+	$image = $request->file('image');
 
-        $filename = time() . '.' . $image->getClientOriginalExtension();
+	$filename = time() . '.' . $image->getClientOriginalExtension();
 
-        $path = public_path('images/' . $filename);
+	$path = public_path('images/' . $filename);
 
-		$imageFile = Image::make($image->getRealPath())->resize(300, 300)->save($path);
+	$imageFile = Image::make($image->getRealPath())->resize(300, 300)->save($path);
 
-        return back();
+	return back();
 
-    }
+}
 
 ~~~
 
@@ -74,20 +74,20 @@ Then add the following AWS bucket policy allowing anyone to make get requests to
 
 ~~~
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "PublicReadGetObject",
-			"Effect": "Allow",
-			"Principal": "*",
-			"Action": "s3:GetObject",
-			"Resource": "arn:aws:s3:::mybucket/*"
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::mybucket/*"
+    }
+  ]
 }
 ~~~
 
-Next you can generate a key and secret key for the root user but for security reasons it's advised to (create new IAM users)[https://console.aws.amazon.com/iam/home#users].
+Next you can generate a key and secret key for the root user but for security reasons it's advised to [create new IAM users](https://console.aws.amazon.com/iam/home#users).
 
 Then we need to generate an Access Key for that user (you will only have one oppurtunity to download or save the secret key before the modal closes)
 
@@ -114,13 +114,12 @@ To configre Laravel to use S3 as a disk driver we need to enable S3 driver in th
 ~~~
 
 
-Finally use (Laravels Storage Facade)[https://laravel.com/docs/master/filesystem] to put the files into your bucket on upload:
+Finally use [Laravels Storage Facade](https://laravel.com/docs/master/filesystem) to put the files into your bucket on upload:
 
 ~~~
-        $imageStream = $imageFile->stream();
+	$imageStream = $imageFile->stream();
 
-        Storage::disk('s3')->put($filename, $imageStream->__toString());
-
+	Storage::disk('s3')->put($filename, $imageStream->__toString());
 ~~~
 
 It may not be required to use the GD php extension or you may prefer to use Imagick, you can do this using the following and by editing config/image.php.

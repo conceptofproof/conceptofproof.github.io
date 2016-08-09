@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Prime time to hit the switch
 ---
-Do you have a talent for factorizing arbitrary large random numbers? Here is a prime number guessing game I made, which takes about 2 hours to build yourself, which challenges you with random numbers to put your arithmetic skills to the test.
+Do you have a talent for factorizing arbitrary large random numbers? I'll show you how to build an educational prime number guessing game using an Arduino that takes roughly 2 hours to build. It will challenge you with random numbers to put your arithmetic skills to the test.
 
 The aim of the game is simple: correctly identify whether a number is prime or not. 
 
@@ -98,7 +98,7 @@ Running the circuit on 10,000 numbers for 6,421ms generates 3796 primes indicati
 
 A better approach would be using the deterministic [Baillie–PSW](https://en.wikipedia.org/wiki/Baillie%E2%80%93PSW_primality_test).
 
-Potential extensions to this project, other than faster implementation, include: 
+Potential extensions to this project, excluding optimizations, include: 
 
 - Varying the input type for responding to the quiz (movement sensors or variable resistors, or connecting to the device over bluetooth or wifi)
 - Modifying the response interface, i.e with LEDs or Piezos

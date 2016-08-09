@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: Untitled
+title: Let's resize and then store all our app image uploads in the cloud.
 ---
 ## A New Post
 

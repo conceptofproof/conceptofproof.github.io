@@ -27,7 +27,7 @@ You will then need to setup a route and controller if you haven't done so alread
 Route::post('/uploads', 'UploadController@store');
 ~~~
 
-And the controller names '_UploadController_' for this form to submit to:
+And the controller named '_UploadController_' for this form to submit to:
 
 ~~~
 $ php artisan make:controller UploadController

@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: Laravel 5.2 / S3 - Resize and store all image uploads in the cloud.
+title: ' Resize and store all image uploads in the cloud. (Laravel 5.2 / S3)'
 ---
 Using the PHP framework Laravel with Amazon S3 we're going to upload files and push them into an S3 bucket. Even though the general premise is the same accross frameworks, cloud storage providers and hosting environments. To begin with, if you haven't already, add the following file upload HTML form into one of your view files:
 
@@ -126,4 +126,4 @@ It may not be required to use the GD php extension or you may prefer to use Imag
 
 ~~~
 $ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
-~~~         
+~~~

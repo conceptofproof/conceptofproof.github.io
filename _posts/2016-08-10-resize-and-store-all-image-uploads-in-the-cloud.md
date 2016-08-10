@@ -21,13 +21,13 @@ To begin you will need to add the following HTML form into one of your view file
 </form>
 ~~~
 
-Take note you will need to setup a route:
+You will then need to setup a route and controller if you haven't done so already.
 
 ~~~
 Route::post('/uploads', 'UploadController@store');
 ~~~
 
-Along with a controller called 'UploadController' for this form to submit to:
+And the controller names 'UploadController' for this form to submit to:
 
 ~~~
 $ php artisan make:controller UploadController

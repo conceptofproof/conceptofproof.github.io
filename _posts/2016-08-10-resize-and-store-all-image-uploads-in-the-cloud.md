@@ -3,7 +3,11 @@ layout: post
 published: true
 title: ' Resize and store all image uploads in the cloud (Laravel 5.2 / S3)'
 ---
-Using the PHP framework Laravel with Amazon S3 we're going to upload files and push them into an S3 bucket. Even though the general premise is the same accross frameworks, cloud storage providers and hosting environments. To begin with, if you haven't already, add the following file upload HTML form into one of your view files:
+Using the [Laravel](https://laravel.com/) PHP framework with [Amazon S3](https://aws.amazon.com/s3/) we're going to upload files to highly scalable and secure cloud storage using expressive code, so the premise is similiar across frameworks, cloud storage providers and hosting environments.
+
+This tutorial assumes you have a very basic understanding of Laravel and have setup your environment i.e followed the [quickstart](https://laravel.com/docs/5.2/quickstart). 
+
+To begin you will need to add the following file upload HTML form into a view file:
 
 ~~~
 <form method="POST" action="/upload" enctype="multipart/form-data">
@@ -66,7 +70,7 @@ public function store(Request $request) {
 
 ~~~
 
-In the next section of the tutorial we'll look at how to configure Amazon S3 to work seemlessly with Laravel.
+In the next section of the tutorial we'll look at how to configure Amazon S3 to work seamlessly with Laravel.
 
 To begin head over to AWS and create a new S3 bucket. I've created mine in IRELAND (eu-west-1), and named it 'mybucket'.
 
@@ -89,7 +93,7 @@ Then add the following AWS bucket policy allowing anyone to make get requests to
 
 Next you can generate a key and secret key for the root user but for security reasons it's advised to [create new IAM users](https://console.aws.amazon.com/iam/home#users).
 
-Then we need to generate an Access Key for that user (you will only have one oppurtunity to download or save the secret key before the modal closes)
+Then we need to generate an Access Key for that user (you will only have one opportunity to download or save the secret key before the modal closes)
 
 The next step is to add the keys to your .env file like so:
 
@@ -100,8 +104,7 @@ S3_BUCKET=mybucket
 S3_REGION=eu-west-1
 ~~~
 
-
-To configre Laravel to use S3 as a disk driver we need to enable S3 driver in the file config/filesystems.php:
+To configure Laravel to use S3 as a disk driver we need to enable S3 driver in the file config/filesystems.php:
 
 ~~~
 's3' => [
@@ -120,6 +123,12 @@ Finally use [Laravels Storage Facade](https://laravel.com/docs/master/filesystem
 	$imageStream = $imageFile->stream();
 
 	Storage::disk('s3')->put($filename, $imageStream->__toString());
+~~~
+
+Finally we can fetch the generated S3 URL using the result from the url() function. For example we can save this into a database.
+
+~~~
+Storage::disk('s3')->url($s3Path);
 ~~~
 
 It may not be required to use the GD php extension or you may prefer to use Imagick, you can do this using the following and by editing config/image.php.

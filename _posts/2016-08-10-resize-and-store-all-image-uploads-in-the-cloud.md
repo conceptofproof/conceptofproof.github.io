@@ -27,15 +27,15 @@ You will then need to setup a route and controller if you haven't done so alread
 Route::post('/uploads', 'UploadController@store');
 ~~~
 
-And the controller names 'UploadController' for this form to submit to:
+And the controller names '_UploadController_' for this form to submit to:
 
 ~~~
 $ php artisan make:controller UploadController
 ~~~
 
-We can then access the file upload in the store method of the UploadController by accessing the $request dependency which can be injected into the function and automatically resolved by Laravel.
+We can then access the file upload in the store method of the _UploadController_ by accessing the **$request** dependency which can be injected into the function and automatically resolved by Laravel.
 
-To perform the resize and saving to disk we need the [Image intervention](http://image.intervention.io/) PHP package which can be installed via composer:
+To perform the resize and saving to disk we need the [Image intervention](http://image.intervention.io/) PHP package which can be installed via _Composer_:
 
 ~~~
 "require": {
@@ -47,10 +47,9 @@ To perform the resize and saving to disk we need the [Image intervention](http:/
 }
 ~~~
 
-
 Note you may need to specify an exact version of intervention/image to prevent version lookup, this is because Laravel can run artisan before resolving all the composer packages and the config file of Laravel will contain an error if package classes don't yet exist.
 
-Now we can make the store function to upload the image in the UploadController.
+Now we can make the store function to upload the image in the _UploadController_.
 
 ~~~
 
@@ -70,7 +69,9 @@ public function store(Request $request) {
 
 ~~~
 
-In the next section of the tutorial we'll look at how to configure Amazon S3 to work seamlessly with Laravel.
+##Storing uploaded images to Amazons Cloud Storage
+
+In the next section of the tutorial we'll look at how to configure _Amazon S3_ to work seamlessly with Laravel.
 
 To begin head over to AWS and create a new S3 bucket. I've created mine in IRELAND (eu-west-1), and named it 'mybucket'.
 
@@ -131,7 +132,7 @@ Finally we can fetch the generated S3 URL using the result from the url() functi
 Storage::disk('s3')->url($s3Path);
 ~~~
 
-It may not be required to use the GD php extension or you may prefer to use Imagick, you can do this using the following and by editing config/image.php.
+It may not be required to use the _GD php_ extension or you may prefer to use Imagick, you can do this using the following and by editing config/image.php.
 
 ~~~
 $ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"

@@ -74,9 +74,9 @@ public function store(Request $request) {
 
 In the next section of the tutorial we'll look at how to configure _Amazon S3_ to work seamlessly with Laravel.
 
-To begin head over to AWS and create a new S3 bucket. I've created mine in IRELAND (eu-west-1), and named it 'mybucket'.
+To begin head over to AWS and create a new S3 bucket. I've created mine in the IRELAND (Region eu-west-1), and named it 'mybucket'.
 
-Then add the following AWS bucket policy allowing anyone to make get requests to your files.
+Once you've done this, add the following AWS bucket policy allowing anyone to make get requests to your files.
 
 ~~~
 {

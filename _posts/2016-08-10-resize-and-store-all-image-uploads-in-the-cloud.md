@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: ' Resize and store all image uploads in the cloud (Laravel 5.2 / S3)'
+title: ' Resize and store all your image uploads in the cloud (Laravel 5.2 / S3)'
 ---
 Using the [Laravel](https://laravel.com/) PHP framework with [Amazon S3](https://aws.amazon.com/s3/) we're going to upload files to highly scalable and secure cloud storage using expressive code, so the premise is similiar across frameworks, cloud storage providers and hosting environments.
 

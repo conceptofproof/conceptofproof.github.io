@@ -12,7 +12,7 @@ To begin you will need to add the following HTML form into one of your view file
 ~~~
 <form method="POST" action="/upload" enctype="multipart/form-data">
 
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_token" value="\{\{ csrf_token() \}\}">
 
         <input name="image" type="file"/>
 

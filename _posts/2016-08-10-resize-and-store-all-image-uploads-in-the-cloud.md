@@ -7,7 +7,7 @@ Using the [Laravel](https://laravel.com/) PHP framework with [Amazon S3](https:/
 
 This tutorial assumes you have a very basic understanding of Laravel and have setup your environment i.e followed the [quickstart](https://laravel.com/docs/5.2/quickstart). 
 
-To begin you will need to add the following file upload HTML form into a view file:
+To begin you will need to add the following HTML form into one of your view files. It uploads files via the POST method.
 
 ~~~
 <form method="POST" action="/upload" enctype="multipart/form-data">

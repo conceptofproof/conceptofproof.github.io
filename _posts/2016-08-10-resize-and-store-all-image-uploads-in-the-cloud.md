@@ -33,7 +33,7 @@ And the controller named '_UploadController_' for this form to submit to:
 $ php artisan make:controller UploadController
 ~~~
 
-We can then access the file upload in the store method of the _UploadController_ by accessing the **$request** dependency which can be injected into the function and automatically resolved by Laravel.
+We can then access the file upload in the _store_ method of the UploadController by accessing the **$request** dependency which can be injected into the function and automatically resolved by Laravel.
 
 To perform the resize and saving to disk we need the [Image intervention](http://image.intervention.io/) PHP package which can be installed via _Composer_:
 

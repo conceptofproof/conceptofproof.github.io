@@ -67,11 +67,9 @@ public function store(Request $request) {
 
 }  
 ~~~  
-  
-  
 
- 
-  
+<br/>
+
 ### Storing uploaded images to Amazons Cloud Storage
 
 In the next section of the tutorial we'll look at how to configure _Amazon S3_ to work seamlessly with Laravel.

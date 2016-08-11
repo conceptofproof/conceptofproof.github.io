@@ -4,8 +4,7 @@
 /* --- General --- */
 
 body {
-  /*font-family: 'Lora', 'Times New Roman', serif;*/
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Lora', 'Times New Roman', serif;
   font-size: 18px;
   color: #404040;
   position: relative;
@@ -22,6 +21,7 @@ p a {
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
+  color: #ff543d;
 }
 a {
   color: #008AFF;
@@ -55,8 +55,7 @@ hr.small {
 }
 
 .main-explain-area {
-  /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 15px inherit;
 }
 

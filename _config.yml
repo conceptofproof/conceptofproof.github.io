@@ -4,7 +4,7 @@
 # baseurl is the website's URL without the hostname
 
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
-url: "https://blog.murraywynnes.com"
+url: "http://rh0gue.com"
 baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
@@ -24,7 +24,7 @@ description: Things I find interesting
 # List of links in the navigation bar
 navbar-links:
   About: "aboutme"
-  Home: "https://murraywynnes.com"
+  Home: "http://rh0gue.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -35,11 +35,11 @@ avatar: "/img/avatar.jpg"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Murray Wynnes
-  email: "mrwynnes@gmail.com"
-  github: codemuz
-  twitter: murraywynnes
-  linkedin: "in/murraywynnes"
+  name: Joshua Wang
+  email: "rh0gue@gmail.com"
+  github: conceptofproof
+  twitter: conceptofproof
+  linkedin: "in/joshwang7"
  
 # Select which links to show in the footer
 footer-links-active:
@@ -52,15 +52,15 @@ footer-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "blog.murraywynnes.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "rh0gue.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-disqus: "murraysblog2016"
+#disqus: "murraysblog2016"
 
 # Fill in your Google Analytics ID to track your website using GA
-google_analytics: "UA-80550432-1"
+#google_analytics: "UA-80550432-1"
 
 # --- Don't need to touch anything below here (but you can if you want) --- #
 

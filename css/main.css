@@ -118,7 +118,7 @@ img {
 .navbar-custom .navbar-brand:focus ,
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  color: #fd6556;
+  color: #ff2d00;
 }
 
 @media only screen and (min-width: 768px) {
@@ -293,7 +293,7 @@ footer .theme-by {
 
 .post-preview a {
   text-decoration: none;
-  color: #fd6556;
+  color: #ff4229;
 }
 
 .post-preview a:focus,

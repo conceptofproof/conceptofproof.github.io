@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
 @import url("pygment_highlights.css");
 
 /* --- General --- */
@@ -315,6 +316,7 @@ footer .theme-by {
 .post-heading .post-meta {
   color: #808080;
   font-size: 18px;
+  font-family: 'Ubuntu', sans-serif;
   font-style: italic;
   margin: 0 0 10px;
 }
@@ -402,6 +404,7 @@ footer .theme-by {
 }
 .intro-header.big-img .post-heading .post-meta {
   color: #EEE;
+  font-family: 'Ubuntu', sans-serif;
 }
 .intro-header.big-img .img-desc {
   background: rgba(30, 30, 30, 0.6);

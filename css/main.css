@@ -23,6 +23,9 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 800;
   /*color: #ff543d;*/
 }
+h2{
+  color: #ff543d;
+}
 a {
   color: #008AFF;
 }

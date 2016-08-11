@@ -17,7 +17,7 @@ The screen also displays your score so you can challenge yourself or your friend
 
 My implementation uses an Arduino UNO Revision 3, If you're interested in playing or building one for yourself I'll show you how below.
 
-## Instructions
+### Instructions
 
 To build this circuit, with or without a breadboard, the components you'll need are:
 
@@ -92,7 +92,7 @@ boolean isPrime(long n) {
 }
 ~~~
 
-## Testing:
+### Testing:
 
 Running the circuit on 10,000 numbers for 6,421ms generates 3796 primes indicating that if you were to select 'No' every answer you would have a 62.04% rate of success.
 

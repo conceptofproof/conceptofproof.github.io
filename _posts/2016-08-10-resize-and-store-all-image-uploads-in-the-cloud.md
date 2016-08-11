@@ -68,7 +68,6 @@ public function store(Request $request) {
 }  
 ~~~  
 
-<br/>
 
 ### Storing uploaded images to Amazons Cloud Storage
 

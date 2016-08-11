@@ -293,7 +293,7 @@ footer .theme-by {
 
 .post-preview a {
   text-decoration: none;
-  color: #ff4229;
+  color: #ff543d;
 }
 
 .post-preview a:focus,
@@ -366,7 +366,7 @@ footer .theme-by {
 .intro-header.big-img .page-heading,
 .intro-header.big-img .post-heading {
   padding: 100px 0;
-  color: #ff4229;
+  color: #fff;
   text-shadow: 1px 1px 3px #000;
 }
 .intro-header .page-heading h1 {
@@ -376,6 +376,7 @@ footer .theme-by {
 .intro-header .post-heading h1 {
   margin-top: 0;
   font-size: 35px;
+  color: #ff543d;
 }
 .intro-header .page-heading .page-subheading,
 .intro-header .post-heading .post-subheading {

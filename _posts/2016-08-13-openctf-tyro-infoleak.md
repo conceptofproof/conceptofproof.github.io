@@ -35,7 +35,7 @@ Can you read the flag?
 2)absolute read
 {% endhighlight %}
 
-Basically, this program provides us with 2 functions: the ability perform a relative read, and the ability to perform an absolute read. 
+Basically, this program provides us with 2 functions: the ability to perform a relative read, and the ability to perform an absolute read. 
 
 ## Relative Read
 

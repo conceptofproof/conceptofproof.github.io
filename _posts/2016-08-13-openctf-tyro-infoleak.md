@@ -1,7 +1,6 @@
 ---
 layout: post
 title: OpenCTF 2016 - Tyro Infoleak1
-subtitle: 
 ---
 
 This is a writeup for **tyro_infoleak1** which was the first part of a 3 part challenge involving, as the challenge name suggests, info leaks. 
@@ -173,7 +172,6 @@ def absolute_read(flag_loc):
 def exploit(r):
         r.recvuntil("2)absolute read\n")
         flag_loc = relative_read()
-
         flag=""
 
         while(1):

@@ -38,12 +38,12 @@ author:
   name: Joshua Wang
   email: "joshua.wang.90@gmail.com"
   github: conceptofproof
-  twitter: conceptofproof
+  twitter: rh0gue
   linkedin: "in/joshwang7"
  
 # Select which links to show in the footer
 footer-links-active:
-  rss: false
+  rss: true
   facebook: false
   email: true
   twitter: true

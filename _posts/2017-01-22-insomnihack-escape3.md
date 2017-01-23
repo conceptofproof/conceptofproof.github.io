@@ -465,3 +465,6 @@ $ cat flag
 INS{RealWorldFlawsAreTheBest}
 $  
 {% endhighlight %}
+
+## Thanks
+Special shout out to [uafio](http://uaf.io) and [grazfather](http://grazfather.github.io), for constantly pushing me to improve my pwning skills and without whom I couldn't have solved this challenge.

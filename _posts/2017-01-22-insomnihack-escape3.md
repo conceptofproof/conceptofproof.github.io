@@ -171,7 +171,7 @@ Therefore, we set our **goal** to be a string of size `0x8`, we can guarantee th
 
 Furthermore, if we overwrite the pointer to the **location** heap region with a pointer to the **encryption_method** heap region, we will force the latter to get `freed()`'d. 
 
-We can further abuse this later if we set our **last_words** to be `0x8` bytes, as the program will reallocate the old **encryption_method** heap region that was just `free()`'d, and fill it with data that we control!
+We can further abuse this later if we set our **last_words** to be `0x8` bytes, as the program will reallocate the old **encryption_method** heap region that was just `free()`'d, and fill it with data that we control, introducing a suble **use-after-free** condition when the program later calls whatever pointer address is stored in the old **encryption_method** heap region!
 
 Essentially, this is what our user heap region looks like before we overwrite the pointer to the **location** heap region.
 ![](../img/escape3-before.png)

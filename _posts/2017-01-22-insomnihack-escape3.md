@@ -26,7 +26,7 @@ RELRO     : Partial
 **The Great Escape pt3** was a pwnable challenge that I helped my teammate [uafio](http://uaf.io) solve during *Insomni'hack Teaser CTF 2017*. I thought this was a very interesting challenge because the binary is linked with [libjemalloc](https://www.rpmfind.net/linux/rpm2html/search.php?query=libjemalloc.so.1()(64bit)), which uses [jemalloc](http://jemalloc.net/), the same memory allocator that [Firefox](https://firefox.com) uses for its heap management.
 
 I had never exploited **jemalloc** before this challenge, so it was a great learning experience.
-After the contest was over, I decided to redo the challenge alone from scratch and do a writeup to solidify my understanding of the concepts I learned from solving this challenge.
+After the contest was over, I decided to redo the challenge alone from scratch and do a writeup to solidify my understanding of the concepts I learned.
 
 This post is a result of that effort. 
 

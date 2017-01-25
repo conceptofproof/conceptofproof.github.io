@@ -35,6 +35,13 @@ This post is a result of that effort.
 
 ## Heap Leak
 The program first allocates `0x8` bytes to store a pointer to an encryption function. 
+
+{%highlight bash %}
+.text:0000000000400E8A                 mov     edi, 8          ; size
+.text:0000000000400E8F                 call    _malloc
+.text:0000000000400E94                 mov     [rbp+encryption_method], rax
+{% endhighlight %} 
+
 It also allocates `0x1d8` bytes for a struct which will hold user a user's information.
 The struct looks something like the following:
 
@@ -48,9 +55,11 @@ struct user{
 
 The program asks us to input our name, current location, goal and any last words that we may have before quitting.
 
-It also asks us to specify an encryption algorithm that it uses to XOR input and output.
+It also asks us to specify an encryption algorithm that it uses to XOR input and output:
 
-`encrypt0` does nothing, `encrypt1` XORs each char by `0x41`, and `encrypt2` XORs each char by `0x78`.
+1. `encrypt0` does nothing
+1. `encrypt1` XORs each char by `0x41`
+1. `encrypt2` XORs each char by `0x78`.
 
 A pointer to whatever encryption function the user selects is stored in the previously allocated `0x8` bytes of memory.
 
@@ -61,7 +70,7 @@ The name, current location, and goal we provide are stored in the user struct we
 "Chunks" in **jemalloc** refer to something entirely different but we will not discuss this concept in this post, as it is not necessary to solve this challenge.
 
 Another region is `malloc()`'d for the user's location. A pointer to this heap region is then placed at an offset of `0x1d0` from the beginning of the beginning of the user's region.
-{% highlight nasm %}
+{% highlight bash %}
 .text:00000000004010EC                 lea     rsi, [rbp+buf]  ; buf
 .text:00000000004010F3                 mov     eax, [rbp+fd]
 .text:00000000004010F9                 mov     ecx, 0          ; flags
@@ -95,7 +104,7 @@ Another region is `malloc()`'d for the user's location. A pointer to this heap r
 
 Later the program reads in the user's goal, which is subsequently `memcpy()`'d to an offset of `0x104` from the beginning of the user's region.
  
-{% highlight nasm %}
+{% highlight bash %}
 .text:00000000004011C8                 lea     rsi, [rbp+buf]  ; buf
 .text:00000000004011CF                 mov     eax, [rbp+fd]
 .text:00000000004011D5                 mov     ecx, 0          ; flags
@@ -121,7 +130,7 @@ Later the program reads in the user's goal, which is subsequently `memcpy()`'d t
 {% endhighlight %}
 
 After this, the encrypted data is printed back out to our socketfd.
-{% highlight nasm %}
+{% highlight bash %}
 .text:0000000000401250                 mov     rax, [rbp+s]
 .text:0000000000401257                 add     rax, 104h
 .text:000000000040125D                 mov     rdi, rax
@@ -178,13 +187,7 @@ gdb $ x/40x 0xb7003000
 {% endhighlight %} 
 With region 1 @ `0xb7003030`, region 2 @ `0xb7003040` and region 3 @ `0xb7003050`
 
-Therefore, we set our **goal** to be a string of size `0x8`, we can guarantee that its corresponding heap region will be allocated immediately after the heap region for the **encryption_method** pointer, which is also `malloc()`'d with a size of `0x8`!
-
-{%highlight bash %}
-.text:0000000000400E8A                 mov     edi, 8          ; size
-.text:0000000000400E8F                 call    _malloc
-.text:0000000000400E94                 mov     [rbp+encryption_method], rax
-{% endhighlight %} 
+Therefore, if we set our **goal** to be a string of size `0x8`, we can guarantee that its corresponding heap region will be allocated immediately after the heap region for the **encryption_method** pointer, which is also `malloc()`'d with a size of `0x8`!
 
 Furthermore, if we overwrite the pointer to the **location** heap region with a pointer to the **encryption_method** heap region, we will force the latter to get `freed()`'d. 
 

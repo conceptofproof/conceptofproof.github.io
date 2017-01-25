@@ -249,7 +249,7 @@ Legend: code, data, rodata, value
 Breakpoint 1, 0x000000000040138f in handleconnection ()
 {% endhighlight %}
 
-## Libc Leak
+## Stage 2 ROP - Libc Leak
 
 Notice how the `RDI` register points to the beginning of our user region, where our user's name resides.
 If we set a ROP chain as our name, we can return to a `xchg rsp, rdi ; ret` gadget to perform a stack pivot and begin moving down our ROP chain to execute arbitrary code.
@@ -288,7 +288,7 @@ archive-eglibc (id libc6-amd64_2.11.1-0ubuntu7_i386)
 
 Now that we've found the correct libc, we can generate gadgets from it to craft a more useful ROP chain.
 
-## Dup2() Trick
+## Stage 2 ROP - Dup2() Trick
 Unfortunately we can't just ROP to `system("/bin/sh\0");` for this particular challenge because the shell will execute on the host and interact with the **stdin** and **stdout** file descriptors, when we can only interact with the **socketfd** file descriptor.
 
 Therefore, we came up with 2 approaches to bypass this issue. We can either do it the hard way, which involves calling `fopen()` to read the `flag` file to a filestream, calling `read()` to read the contents of the file to a buffer, and finally calling `send()` to send the contents of the buffer to our **socketfd** file descriptor, ***OR*** we can do it the easy way which simply involves doing a [dup2()](http://shell-storm.org/shellcode/files/shellcode-881.php) trick.

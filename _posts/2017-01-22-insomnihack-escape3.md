@@ -8,6 +8,8 @@ published: True
 **Solves:** 10
 **Category:** Exploitation 
 
+> [flag.elf](../binaries/flag.elf)
+
 {% highlight bash %}
 flag.elf: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=08df0c3369b497ee8ed8fca10dbb39ae75ebb273, not stripped
 {% endhighlight %}
@@ -31,20 +33,34 @@ After the contest was over, I decided to redo the challenge alone from scratch a
 This post is a result of that effort. 
 
 ## Heap Leak
+The program first allocates `0x8` bytes to store a pointer to an encryption function. 
+It also allocates `0x1d8` bytes for a struct which will hold user a user's information.
+The struct looks something like the following:
+
+{% highlight C %}
+struct user{
+    char name[260];
+    char goal[204];
+    char *location;
+}
+{% endhighlight %}
+
 The program asks us to input our name, current location, goal and any last words that we may have before quitting.
 
 It also asks us to specify an encryption algorithm that it uses to XOR input and output.
 
 `encrypt0` does nothing, `encrypt1` XORs each char by `0x41`, and `encrypt2` XORs each char by `0x78`.
- 
-When a user is first created, a chunk of size `0x1d8` is `malloc()`'d for the user.
+
+A pointer to whatever encryption function the user selects is stored in the previously allocated `0x8` bytes of memory.
+
+The name, current location, and goal we provide are stored in the user struct we previously allocated a chunk of size `0x1d8` for.
 
 **To be accurate, we will call these heap chunks, "regions", for the remainder of this post, as that is what jemalloc calls dlmalloc chunks minus their metadata.** 
 
 "Chunks" in **jemalloc** refer to something entirely different but we will not discuss this concept in this post, as it is not necessary to solve this challenge.
 
 Another region is `malloc()`'d for the user's location. A pointer to this heap region is then placed at an offset of `0x1d0` from the beginning of the beginning of the user's region.
-{% highlight bash %}
+{% highlight asm %}
 .text:00000000004010EC                 lea     rsi, [rbp+buf]  ; buf
 .text:00000000004010F3                 mov     eax, [rbp+fd]
 .text:00000000004010F9                 mov     ecx, 0          ; flags
@@ -78,7 +94,7 @@ Another region is `malloc()`'d for the user's location. A pointer to this heap r
 
 Later the program reads in the user's goal, which is subsequently `memcpy()`'d to an offset of `0x104` from the beginning of the user's region.
  
-{% highlight bash %}
+{% highlight asm %}
 .text:00000000004011C8                 lea     rsi, [rbp+buf]  ; buf
 .text:00000000004011CF                 mov     eax, [rbp+fd]
 .text:00000000004011D5                 mov     ecx, 0          ; flags
@@ -294,7 +310,7 @@ exe = /home/rh0gue/Documents/insomnihack17/escape3/flag.elf
 fd[0] -> tcp        0      0 127.0.0.1:5001          127.0.0.1:36560         ESTABLISHED 0          158875
 fd[1] -> tcp        0      0 127.0.0.1:5001          127.0.0.1:36560         ESTABLISHED 0          158875
 fd[2] -> /dev/pts/31
-fd[3] -> /home/rh0gue/Documents/insomnihack17/escape3/flag3.txt
+fd[3] -> /home/rh0gue/Documents/insomnihack17/escape3/flag3
 fd[4] -> tcp        0      0 127.0.0.1:5001          127.0.0.1:36560         ESTABLISHED 0          158875
 {% endhighlight %}
 

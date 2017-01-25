@@ -60,7 +60,7 @@ The name, current location, and goal we provide are stored in the user struct we
 
 "Chunks" in **jemalloc** refer to something entirely different but we will not discuss this concept in this post, as it is not necessary to solve this challenge.
 
-Another region is `malloc()`'d for the user's location. A pointer to this heap region is then placed at an offset of `0x1d0` from the beginning of the beginning of the user's region. testasdd
+Another region is `malloc()`'d for the user's location. A pointer to this heap region is then placed at an offset of `0x1d0` from the beginning of the beginning of the user's region.
 {% highlight nasm %}
 .text:00000000004010EC                 lea     rsi, [rbp+buf]  ; buf
 .text:00000000004010F3                 mov     eax, [rbp+fd]

@@ -59,7 +59,7 @@ It also asks us to specify an encryption algorithm that it uses to XOR input and
 
 1. `encrypt0` does nothing
 1. `encrypt1` XORs each char by `0x41`
-1. `encrypt2` XORs each char by `0x78`.
+1. `encrypt2` XORs each char by `0x78`
 
 A pointer to whatever encryption function the user selects is stored in the previously allocated `0x8` bytes of memory.
 

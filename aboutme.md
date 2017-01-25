@@ -4,4 +4,4 @@ title: About
 subtitle: Vulnerability Research, Reverse-Engineering and Exploit Development
 ---
 
-I work as a security researcher for a tech company. This blog is a collection of things that interest me. Please contact me by e-mail if you have any questions.
+I work as a security researcher for a tech company. This blog is a collection of CTF writeups and security-related things. Please contact me by e-mail if you have any questions.

@@ -167,7 +167,7 @@ rh0gue@firenze:~/Documents/insomnihack17/escape3$ python solve.py 127.0.0.1 5001
 
 ## RIP Control
 
-From here, we can actually exploit [jemalloc](http://jemalloc.net/) to get control of `RIP`. 
+From here, we can actually exploit [jemalloc](http://jemalloc.net/) and introduce a **use-after-free** condition to get control of `RIP`. 
 
 <span style="color:red">**In jemalloc, same-sized regions are placed contiguous to each other, without any metadata information separating them.**</span> 
 

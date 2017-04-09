@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Insomni'hack Teaser CTF 2017 -- The Great Escape pt3
+title: Insomni'hack Teaser CTF 2017 - The Great Escape pt3
 published: True
 ---
 

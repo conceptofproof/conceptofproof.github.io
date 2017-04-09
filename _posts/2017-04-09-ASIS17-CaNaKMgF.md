@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ASIS Quals 2017 - CaNaKMgF Remastered
+title: ASIS Quals CTF 2017 - CaNaKMgF Remastered
 published: True
 ---
 

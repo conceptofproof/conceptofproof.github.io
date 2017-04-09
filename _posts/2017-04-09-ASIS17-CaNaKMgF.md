@@ -37,7 +37,7 @@ When we run the program, we are presented with the following menu.
 {% endhighlight %}
 
 The program is very simple. It allows us to allocate heap chunks of different sizes, which it places in a global array in the .BSS called `alloc_list[]`. 
-We can write data of our choosing into these chunks and the the program ensures that the length of our data fits inside the chunk we've allocated for it.  
+We can write data of our choosing into these chunks and the program ensures that the length of our data fits inside the chunk we've allocated for it.  
 We can specify chunks from this list that we would like to print out the contents of.
 Similarly, we can also free any chunks in this list.
  

@@ -46,7 +46,7 @@ There was also some functionality to read limited files off the remote server wh
 ## Exploit
 The main vulnerability in this program is that when a chunk is freed, the associated pointer to the chunk is not removed from `alloc_list[]`. This allows us to perform **use-after-frees** and **double-frees** which we can abuse to corrupt the heap and gain code execution.
 
-To get a libc leak, we can exploit the **UAF** to allocate 2 small chunks, free one of them and then print its contents out, since we know the `FD` and `BK` pointers of our free'd small chunk will be populated with a pointer to an offset from `main_arena` in libc. (The purpose of allocating a 2nd small chunk, is to prevent top chunk consolidation.)
+To get a libc leak, we can exploit the **UAF** to allocate 2 small chunks, free the first one, and then print its contents out, since we know the `FD` and `BK` pointers of our free'd small chunk will be populated with a pointer to an offset from `main_arena` in libc. (The purpose of allocating a 2nd small chunk, is to prevent top chunk consolidation.)
 
 To get control of `RIP`, we can perform a **fastbin attack** to get `malloc()` to return an almost arbitrary pointer, overwrite `__malloc_hook`, and then call our overwritten `__malloc_hook` function pointer by triggering a double free memory corruption error.
 

@@ -125,7 +125,7 @@ After two more allocations, our target address should now be at the head of this
 
 [HEAD]->{target addr}
 
-Then, the next memory allocation of size `0x68` should return a pointer to our target address and since we can control the contents of chunks we allocate, we  will simply overwrite `__malloc_hook` with a **"magic" one gadget RCE** address.
+Then, the next memory allocation of size `0x68` should return a pointer to our target address`+0x10` and since we can control the contents of chunks we allocate, we  will simply overwrite `__malloc_hook` with a **"magic" one gadget RCE** address.
 
 Once we trigger an actual double free corruption error, the program should now spawn a shell.
 

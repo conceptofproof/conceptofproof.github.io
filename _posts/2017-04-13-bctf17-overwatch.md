@@ -147,7 +147,7 @@ This is where things get interesting.
 Remember the `randBytes` global we mentioned earlier?
 
 Although `randBytes` isn't directly printed out, it is used to determine the levels, maps, and heroes of each teammate that ARE.
-<span style="color:red">**If we can write overwrite the data in `randBytes` with part of a libc address, we can use dynamic constraint solving based on the levels, maps, and heroes of each teammate that are printed out to determine the bytes we've overwritten `randBytes` with.**</span> 
+<span style="color:red">**If we can overwrite the data in `randBytes` with part of a libc address, we can use dynamic constraint solving based on the levels, maps, and heroes of each teammate that are printed out to determine the bytes we've overwritten `randBytes` with.**</span> 
 
 One heap exploitation technique that would allow us to do this, is the **unsorted bin attack** technique.
 

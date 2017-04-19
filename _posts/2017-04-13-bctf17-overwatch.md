@@ -371,9 +371,9 @@ Now that we have the leak, the rest of the exploit is pretty straight forward.
 In order to hijack the control flow of this program, we will want to overwrite a function pointer that gets called. 
 We will overwrite `__realloc_hook`, since **full RELRO** is enabled, preventing us from overwriting a **GOT** entry.
 
-To perform this overwrite, we can use a **fastbin attack** to overwrite the `FD` pointer of a free-d fast chunk in order to get `malloc()` to return an almost-arbitrary address of our choosing. 
+To perform this overwrite, we can use a **fastbin attack** to overwrite the `FD` pointer of a `free()`'d fast chunk in order to get `malloc()` to return an almost-arbitrary address of our choosing. 
 
-As I've mentioned in previous posts, we can abuse the fact that we can point `FD` to misaligned addresses to get around the size check that `malloc()` does. 
+As I've mentioned in [previous posts](../2017-04-09-ASIS17-CaNaKMgF), we can abuse the fact that we can point `FD` to misaligned addresses to get around the size check that `malloc()` does. 
 
 This looks like a good target:
 {% highlight bash %}

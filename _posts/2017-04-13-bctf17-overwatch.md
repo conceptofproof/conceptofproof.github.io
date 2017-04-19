@@ -419,7 +419,7 @@ gdb-peda$ x/32xg 0x603090
 0x603100:       0x0049494949494949      0x0000000000000031
 {% endhighlight %}
 
-`fwd` is currently `0x604090` and it will compare `fwd+0x18`, or `0x4949494949494949` to `0x00007ffff7dd1b78`, and if they are not equal, it will trigger a corrupted unsorted chunk error. 
+`fwd` is currently `0x603090` and it will compare `fwd+0x18`, or `0x4949494949494949` to `0x00007ffff7dd1b78`, and if they are not equal, it will trigger a corrupted unsorted chunk error. 
 
 Therefore, to pass this check, we will write the following payload to `0x6030a0`. 
 {% highlight python %}

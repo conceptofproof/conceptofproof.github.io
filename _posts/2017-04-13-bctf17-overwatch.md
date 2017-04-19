@@ -167,6 +167,9 @@ In order to be able to overwrite the `BK` pointer of a chunk in the unsorted bin
 To achieve this overlap, we can perform another heap exploitation technique called **House of Einherjar**.  
 
 ## House of Einherjar attack
+
+**House of Einherjar** is a really cool heap exploitation technique that my teammate [uafio](http://uaf.io) taught me. 
+
 **House of Einherjar** works by corrupting the size field of an allocated chunk and flipping its `prev_inuse` bit off to trick it into thinking its previous chunk is free. Then, when this chunk with the corrupted size is `free()`'d, because its `prev_inuse` bit is now off, it will attempt to perform a backwards consolidation with a fake chunk, using its `prev_size` field to calculate the location of this fake free chunk.  
 
 ![](../img/overwatch-1.png)
@@ -298,6 +301,7 @@ Notice that C has been backwards consolidated into the old A chunk and that it i
 
 <span style="color:red">**This means that we can now allocate another chunk that overlaps with B to overwrite any data in B's chunk!**</span>
 
+For a more detailed explanation on how **House of Einherjar** works, feel free to check out [uafio's](http://uaf.io) stream about the technique [here](https://www.youtube.com/watch?v=N9-xSFMNVpg) and [here](https://www.youtube.com/watch?v=uC81mV--pEg).
 
 ## Unsorted bin attack
 Now that we have overlapping chunks, we will want to free **B** and place it in the unsorted bin. However, there are a few problems in the heap now that we need to fix in order to successfully perform this step.
@@ -706,3 +710,4 @@ bctf{0ad5c4cb31a4bd7961d4aafa7f6975d8}
 
 ### Thanks
 Thanks again to [brieflyx](http://brieflyx.me/) for his help and to [vakzz](https://devcraft.io) for lending a second pair of eyes to look at this task. 
+Also to [uafio](http://uaf.io) and [grazfather](http://grazfather.io) for taking away my free time by making me do [pwnable.tw](http://pwnable.tw) challenges. 

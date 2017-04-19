@@ -710,4 +710,4 @@ bctf{0ad5c4cb31a4bd7961d4aafa7f6975d8}
 
 ### Thanks
 Thanks again to [brieflyx](http://brieflyx.me/) for his help and to [vakzz](https://devcraft.io) for lending a second pair of eyes to look at this task. 
-Also to [uafio](http://uaf.io) and [grazfather](http://grazfather.io) for taking away my free time by making me do [pwnable.tw](http://pwnable.tw) challenges. 
+Also to [uafio](http://uaf.io) and [grazfather](http://grazfather.github.io) for taking away my free time by making me do [pwnable.tw](http://pwnable.tw) challenges. 

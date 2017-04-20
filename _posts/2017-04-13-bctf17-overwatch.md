@@ -27,9 +27,9 @@ RELRO     : FULL
 {% endhighlight %}
 
 ## Intro
-**Overwatch** was a 909 point exploitation challenge in **BCTF 2017** that was released a little after the halfway point in the competition. It required the use of multiple heap exploitation techniques and was solved by only 3 teams. Unfortunately, we did not look at this challenge until late in the game and were unable to finish our exploit in time. 
+**Overwatch** was a 909 point exploitation challenge in **BCTF 2017** that was released a little after the halfway point in the competition. It required the use of multiple heap exploitation techniques and was solved by only 3 teams. It was one of the more creative heap pwning challenges I've done so far. Unfortunately, we did not look at this challenge until late in the game and were unable to finish our exploit in time. 
 It was only after the CTF ended that I managed to solve this with the help of [brieflyx](http://brieflyx.me/) who gave me some additional guidance on how to get the leak and re-affirmed some of the ideas I had come up with for my exploit plan. 
-Although I didn't solve this challenge until after the CTF finished, I thought it'd still be worth it to do a write-up because the way to get the leak is actually pretty neat and demonstrates several heap exploitation techniques that I've been meaning to write about for a while. So without further ado, __let's get started!__
+Although I didn't solve this challenge until after the CTF finished, I thought it'd still be worth it to do a write-up for educational purposes because the way to get the leak is actually pretty neat and demonstrates several heap exploitation techniques that I've been meaning to write about for a while. So without further ado, __let's get started!__
 
 ## Reversing
 The binary is a menu-driven program that allows users to perform multiple actions for 15 rounds. 

@@ -1,10 +1,10 @@
 ---
 layout: post
 title: BCTF 2017 - Overwatch
+fb-img: ../img/overwatch-1.png
 published: True
 ---
-<meta property="og:image" content="../img/overwatch-1.jpg"/>
-<meta property="og:description" content="Overwatch was a 909 point exploitation challenge in BCTF 2017 that was released a little after the halfway point in the competition. It required the use of multiple heap exploitation techniques and was solved by only 3 teams."/>
+
 **Points:** 909
 **Solves:** 3
 **Category:** Exploitation 
@@ -174,7 +174,7 @@ To achieve this overlap, we can perform another heap exploitation technique call
 **House of Einherjar** works by exploiting a single NULL byte overflow to corrupt the size field of an allocated chunk and flip its `prev_inuse` bit off to trick it into thinking its previous chunk is free. Then, when this chunk with the corrupted size is `free()`'d, because its `prev_inuse` bit is now off, it will attempt to perform a backwards consolidation with a fake chunk, using its `prev_size` field to calculate the location of this fake free chunk.  
 
 The following diagram demonstrates this technique. (Blue = free, Green = allocated)
-![](../img/overwatch-1.jpg)
+![](../img/overwatch-1.png)
 
 In our exploit, we don't have a heap leak, so our merge target is a real chunk, which saves us the extra steps of having to craft a fake chunk.
 

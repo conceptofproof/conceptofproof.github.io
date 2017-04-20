@@ -3,7 +3,8 @@ layout: post
 title: BCTF 2017 - Overwatch
 published: True
 ---
-
+<meta property="og:image" content="../img/overwatch-1.jpg"/>
+<meta property="og:description" content="Overwatch was a 909 point exploitation challenge in BCTF 2017 that was released a little after the halfway point in the competition. It required the use of multiple heap exploitation techniques and was solved by only 3 teams."/>
 **Points:** 909
 **Solves:** 3
 **Category:** Exploitation 
@@ -26,7 +27,7 @@ RELRO     : FULL
 {% endhighlight %}
 
 ## Intro
-**Overwatch** was a 909 point exploitation challenge in **BCTF 2017 Quals** that was released a little after the halfway point in the competition. It required the use of multiple heap exploitation techniques and was solved by only 3 teams. Unfortunately, we did not look at this challenge until late in the game and were unable to finish our exploit in time. 
+**Overwatch** was a 909 point exploitation challenge in **BCTF 2017** that was released a little after the halfway point in the competition. It required the use of multiple heap exploitation techniques and was solved by only 3 teams. Unfortunately, we did not look at this challenge until late in the game and were unable to finish our exploit in time. 
 It was only after the CTF ended that I managed to solve this with the help of [brieflyx](http://brieflyx.me/) who gave me some additional guidance on how to get the leak and re-affirmed some of the ideas I had come up with for my exploit plan. 
 Although I didn't solve this challenge until after the CTF finished, I thought it'd still be worth it to do a write-up because the way to get the leak is actually pretty neat and demonstrates several heap exploitation techniques that I've been meaning to write about for a while. So without further ado, __let's get started!__
 

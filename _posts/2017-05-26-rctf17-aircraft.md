@@ -26,8 +26,10 @@ RELRO     : FULL
 {% endhighlight %}
 
 ## Vulnerability
-This program allows us to build planes, which we can name, as well as build airports, which we can also name.
-We can fly planes to different airports and also delete different planes and airports.
+This program allows us to build planes, which we can name, as well as build airports, which we can also name and list information about.
+We can fly planes to different airports and also sell different planes and airports which frees them.
+The planes are allocated on the heap and maintained in a doubly-linked list, the head of which, is a global in the **.BSS**.
+Similarly, the airports are also allocated on the heap and a maintained in an global array of pointers. 
 
 There are many different vulnerabilities in this program.
 

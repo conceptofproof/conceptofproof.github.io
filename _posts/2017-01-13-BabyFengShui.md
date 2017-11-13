@@ -46,7 +46,7 @@ void *__cdecl add_user(size_t description_size)
 
 In the heap, this looks something like the following. 
 
-![](../img/babyfengshui_1.png)
+![](../img/babyfengshui-1.png)
 
 **Notice that the first dword of each user's name chunk is a pointer to the user's description chunk.**
 
@@ -100,7 +100,7 @@ This check only works if a user's description and name chunks are contiguous to 
 
 But, what if we were able to allocate a user's chunks in a way such that a user's description and name chunks were far away from each other?
 
-![](../img/babyfengshui_2.png)
+![](../img/babyfengshui-2.png)
 
 That would allow us to overwrite anything in between the user's description chunk and name chunk, including other valid heap chunks, introducing a heap overflow vulnerability.
 

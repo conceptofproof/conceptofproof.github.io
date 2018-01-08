@@ -263,9 +263,8 @@ Each bin contains a **singly-linked list** of `tcache_entry` objects, each of wh
 This means that for our binary, since we have 2 threads running, we have **2 `tcache`'s**, and whenever the garbage collection function running in `t2` frees a `groupName` chunk and its associated `group` chunk, **they will both end up in `t2`'s `tcache`**. Similarly, whenever a `user` chunk is freed in `t1`, **the chunk will end up in `t1`'s `tcache`, NOT `t2`'s `tcache`**. 
 
 We can examine each of the `tcache`s in GDB like so: 
-{% highlight text %}
-THREAD 1'S TCACHE @ 0x603010:
-============================
+{% highlight bash %}
+### THREAD 1'S TCACHE @ 0x603010:
 gdb-peda$ p *(struct tcache_perthread_struct *)tcache
 $62 = {
   counts = "\001", '\000' <repeats 62 times>, 
@@ -278,8 +277,7 @@ gdb-peda$ info threads
   2    Thread 0x7ffff77d5700 (LWP 2713) "sgc" 0x00007ffff78aeb98 in __GI___nanosleep (requested_time=requested_time@entry=0x7ffff77d4ea0, 
     remaining=remaining@entry=0x7ffff77d4ea0) at ../sysdeps/unix/sysv/linux/nanosleep.c:27
 
-THREAD 2'S TCACHE @ 0x7ffff00008c0:
-==================================
+###THREAD 2'S TCACHE @ 0x7ffff00008c0:
 gdb-peda$ thread 2 
 [Switching to thread 2 (Thread 0x7ffff77d5700 (LWP 2713))]
 #0  0x00007ffff78aeb98 in __GI___nanosleep (requested_time=requested_time@entry=0x7ffff77d4ea0, remaining=remaining@entry=0x7ffff77d4ea0)

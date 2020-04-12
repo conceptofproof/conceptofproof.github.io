@@ -152,7 +152,7 @@ Although `randBytes` isn't directly printed out, it is used to determine the lev
 
 One heap exploitation technique that would allow us to do this, is the **unsorted bin attack** technique.
 
-In an **unsorted bin attack**, we overwrite the **BK** pointer of a chunk in the unsorted bin with a controlled value, so that when this chunk is removed from the unsorted bin, it will write `&unsorted_bin` to `BK+0x10`.
+In an **unsorted bin attack**, we overwrite the **BK** pointer of a chunk in the unsorted bin with a controlled value, so that when this chunk is removed from the unsorted bin, it will write `&main_arena.top` to `BK+0x10`.
 
 *From malloc.c:*
 {% highlight C %}
@@ -161,7 +161,7 @@ unsorted_chunks (av)->bk = bck;
 bck->fd = unsorted_chunks (av);
 {% endhighlight %}  
 
-For our exploit we can use this attack to overwrite the `BK` pointer with an address in the **.BSS** so that part of `&unsorted_bin` overwrites `randBytes`.
+For our exploit we can use this attack to overwrite the `BK` pointer with an address in the **.BSS** so that part of `&main_arena.top` overwrites `randBytes`.
 
 In order to be able to overwrite the `BK` pointer of a chunk in the unsorted bin though,  we first need to produce 2 overlapping chunks. This will allow us to corrupt the contents of a free chunk without needing an overflow or a  **use-after-free (UAF)** vulnerability!
 
@@ -465,7 +465,7 @@ import sys, z3
 #   1.1 use off-by-one vuln to insert poisoned NUL byte into the LSB of target chunk
 #   1.2 craft appropriate fake prev_size of target chunk while doing 1.1
 #   1.3 free target chunk 
-# 2. Perform unsorted bin attack to write main_arena.bins[0] to .BSS                     
+# 2. Perform unsorted bin attack to write &main_arena.top to .BSS                     
 #   2.1 re-craft heap to avoid triggering any errors when doing step 2.2
 #   2.2 free target small chunk and place it in unsorted bin                  
 #   2.3 overwrite BK ptr of target chunk
@@ -675,7 +675,7 @@ if __name__ == "__main__":
         pause()
         exploit(r)
 {%endhighlight %}
-{% highlight text%}
+{% highlight text %}
 ➜  overwatch python solve.py 35.167.163.161 16969
 [*] For remote: solve.py HOST PORT
 [+] Opening connection to 35.167.163.161 on port 16969: Done
